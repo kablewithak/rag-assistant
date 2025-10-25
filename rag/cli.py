@@ -26,17 +26,9 @@ def askq(
     question: str = typer.Argument(..., help="Your question"),
     persist_dir: str = typer.Option(SETTINGS.chroma_dir, help="Chroma persistence directory"),
     k: int = typer.Option(SETTINGS.retrieval_k, help="Top-k results"),
-    mmr: bool = typer.Option(
-        SETTINGS.retrieval_mmr,
-        "--mmr/--no-mmr",  # <- force boolean flag pair
-        help="Use maximal marginal relevance",
-    ),
+    mmr: bool = typer.Option(SETTINGS.retrieval_mmr, help="Use maximal marginal relevance"),
     model: str = typer.Option(SETTINGS.ollama_model, help="Ollama model name"),
-    show_sources: bool = typer.Option(
-        True,
-        "--show-sources/--no-show-sources",  # <- force boolean flag pair
-        help="Print sources at the end",
-    ),
+    show_sources: bool = typer.Option(True, help="Print sources at the end"),
 ) -> None:
     answer, sources = ask(
         question,
