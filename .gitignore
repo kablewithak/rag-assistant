@@ -4,3 +4,12 @@ __pycache__/
 *.log
 .env
 .DS_Store
+'n# build artifacts'n*.egg-info/'n*__pycache__/'n.pytest_cache/'n
+
+# build artifacts
+*.egg-info/
+__pycache__/
+.pytest_cache/
+build/
+dist/
+
